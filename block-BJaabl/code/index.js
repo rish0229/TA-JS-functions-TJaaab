@@ -47,12 +47,23 @@ calc(20, 10, 'mul'); // 200
 */
 function calc(numA, numB, operation) {
   if (typeof numA === 'number' && typeof numB === 'number') {
-    return numA * numB;
+    switch (operation) {
+      case 'add':
+        return numA + numB;
+      case 'sub':
+        return numA - numB;
+      case 'mul':
+        return numA * numB;
+      case 'div':
+        return numA / numB;
+      default:
+        alert('Enter valid operation.');
+    }
   } else {
     return `Enter valid input`;
   }
 }
-console.log(calc(5, 6, ' * '));
+console.log(calc(5, 6, 'sub'));
 /*
 5. Create a function named `isLeapYear` that accepts a number data type and return `true` or `false` based
 on if the year is leap year or not.
